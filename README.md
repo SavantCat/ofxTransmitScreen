@@ -2,7 +2,6 @@
 oFの画面をofxOSCで送信する（Windouws）
 
 ##必須Addon
-------
 + ofxOSC 
 + ofxTurboJpeg(https://github.com/robotconscience/ofxTurboJpeg.git)
 
