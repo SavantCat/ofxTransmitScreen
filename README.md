@@ -1,6 +1,6 @@
 # ofxTransmitScreen
 oFの画面をofxOSCで送信するaddon（Windouwsのみ動作確認)   
-別スレッドで処理してるためメインスレッドには、影響が少ないので
+別スレッドで処理してるためメインスレッドには、影響が少ないです。
 
 ##必須Addon
 + ofxOSC 
