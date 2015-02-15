@@ -31,6 +31,7 @@ public:
 
 	void get();
 	void send();
+
 private:
 	//Options
 	bool ready;
@@ -51,5 +52,4 @@ private:
 	ofxTurboJpeg turbo;
 	unsigned char * compressed;
 	unsigned long size;
-
 };
