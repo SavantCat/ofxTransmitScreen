@@ -80,7 +80,7 @@ oFの画面をofxOSCで送信するaddon（Windouwsのみ動作確認)
     //省略
     
     void ofApp::exit(){
-    	screen.stop();
+    	screen.stop();　//送信停止
     }
 
 ##応用
