@@ -13,22 +13,22 @@ void ofxTransmitScreen::setup(string host,int port){
 }
 
 void ofxTransmitScreen::setOptions(int quality){
-	if (qualitty < 1)
+	if (quality < 1)
 		ofxTransmitScreen::quality = 1;
-	if (qualitty > 100)
+	if (quality > 100)
 		ofxTransmitScreen::quality = 100;
-	if (0 < qualitty && qualitty <=100)
+	if (0 < quality && quality <=100)
 		ofxTransmitScreen::quality = quality;
 }
 
 void ofxTransmitScreen::setOptions(int width,int heigh,int quality){
 	ofxTransmitScreen::width  = width;
 	ofxTransmitScreen::height = heigh;
-	if (qualitty < 1)
+	if (quality < 1)
 		ofxTransmitScreen::quality = 1;
-	if (qualitty > 100)
+	if (quality > 100)
 		ofxTransmitScreen::quality = 100;
-	if (0 < qualitty && qualitty <= 100)
+	if (0 < quality && quality <= 100)
 		ofxTransmitScreen::quality = quality;
 }
 
