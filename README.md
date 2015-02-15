@@ -93,10 +93,12 @@ oFの画面をofxOSCで送信するaddon（Windouwsのみ動作確認)
 ------
 ##応用
 + [Unity-OSC]でテクスチャとして受信可能
+
 [Unity-OSC]:https://github.com/keijiro/unity-osc
 ------
 ##予定
 + 800x800以上になると出力される画像が不安定になる
+
 ------
 ライセンス
 Copyright &copy; 2015 Katsuyoshi Hotta [@Savant_Cat](https://twitter.com/Savant_Cat)  
