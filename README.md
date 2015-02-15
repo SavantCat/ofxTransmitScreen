@@ -7,24 +7,24 @@ oFの画面をofxOSCで送信するaddon（Windouwsのみ動作確認)
 + ofxTurboJpeg(https://github.com/robotconscience/ofxTurboJpeg.git)
 
 ##関数   
-    void setup(string host,int port);   
+        void setup(string host,int port);   
 +   '送信先のアドレス、ポートを設定する':
 
-    void setOptions(int quality);   
+        void setOptions(int quality);   
 +   '出力される画像のクオリティ設定（1～100）' 
 
-    void setOptions(int width,int heigh,int quality);  
+        void setOptions(int width,int heigh,int quality);  
 +   '出力される画像の幅'
 +   '出力される画像の高さ'   
 +   '出力される画像のクオリティ設定（1～100）'
 
-    void get();
+        void get();
 +   '画面全体の取得'
 
-    void start()
+        void start()
 +   '送信開始'
 
-    void stop()
+        void stop()
 +   '送信停止'
 
 ##サンプル
