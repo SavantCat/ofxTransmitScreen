@@ -58,7 +58,7 @@ oFの画面をofxOSCで送信するaddon（Windouwsのみ動作確認)
     //--------------------------------------------------------------
     void ofApp::setup(){
     	ofBackground(0);
-      ofSetFrameRate(60);
+        ofSetFrameRate(60);
     
     	screen.setup("127.0.0.1",8080);　//送信先のホストとポート番号を指定
     	screen.setOptions(512,512,50);   //jpgの設定
