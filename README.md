@@ -5,6 +5,8 @@ oFの画面をofxOSCで送信するaddon（Windouwsのみ動作確認)
 ##必須Addon
 + ofxOSC 
 + ofxTurboJpeg(https://github.com/robotconscience/ofxTurboJpeg.git)
+
+
 ------
 ##関数   
 ------
