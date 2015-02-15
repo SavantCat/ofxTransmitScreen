@@ -52,6 +52,7 @@ void ofxTransmitScreen::send(){
 
 		//Makeing Jpg binary
 		compressed = turbo.compress(tmpBuffer,quality,&size);
+		
 		ofBuffer data((char *)compressed,size);
 	
 		//Makeing OSC message
@@ -62,6 +63,8 @@ void ofxTransmitScreen::send(){
 
 		//Send message
 		sender.sendMessage(message);
+		free(compressed);
+
 		sendReady = false;
 	}else{
 		cout << "error: Did you setup?" << endl;
@@ -74,6 +77,5 @@ void ofxTransmitScreen::threadedFunction(){
 		if(sendReady){
 			send();
 		}
-        //sleep(100);
     }
 }
