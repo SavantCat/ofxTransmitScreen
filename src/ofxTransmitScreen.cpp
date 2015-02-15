@@ -10,10 +10,13 @@ void ofxTransmitScreen::setup(string host,int port){
 	quality = 100;
 	width   = ofGetWidth();
 	height  = ofGetHeight();
+
+	ScreenBuffer.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+	sendReady = false;
 }
 
 void ofxTransmitScreen::setOptions(int quality){
-	if (quality < 1)
+	if (quality < 0)
 		ofxTransmitScreen::quality = 1;
 	if (quality > 100)
 		ofxTransmitScreen::quality = 100;
@@ -24,7 +27,7 @@ void ofxTransmitScreen::setOptions(int quality){
 void ofxTransmitScreen::setOptions(int width,int heigh,int quality){
 	ofxTransmitScreen::width  = width;
 	ofxTransmitScreen::height = heigh;
-	if (quality < 1)
+	if (quality < 0)
 		ofxTransmitScreen::quality = 1;
 	if (quality > 100)
 		ofxTransmitScreen::quality = 100;
@@ -34,16 +37,14 @@ void ofxTransmitScreen::setOptions(int width,int heigh,int quality){
 
 void ofxTransmitScreen::get(){
 	//Get Screen img
-	if(sendReady){
-		ScreenBuffer.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
-		sendReady = false;
-	}
+	ScreenBuffer.grabScreen(0, 0, ofGetWidth(), ofGetHeight());
+	sendReady = true;
 }
 
 void ofxTransmitScreen::send(){
 	if(ready){
 		message.clear();
-
+		
 		//optimization image
 		tmpBuffer.clone(ScreenBuffer);
 		tmpBuffer.resize(width,height);
@@ -61,8 +62,7 @@ void ofxTransmitScreen::send(){
 
 		//Send message
 		sender.sendMessage(message);
-
-		sendReady = true;
+		sendReady = false;
 	}else{
 		cout << "error: Did you setup?" << endl;
 	}
@@ -71,8 +71,9 @@ void ofxTransmitScreen::send(){
 void ofxTransmitScreen::threadedFunction(){
     while(isThreadRunning())
     {
-
-		send();
-        //sleep(1);
+		if(sendReady){
+			send();
+		}
+        //sleep(100);
     }
 }

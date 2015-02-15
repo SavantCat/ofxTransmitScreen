@@ -14,7 +14,7 @@ public:
 
     void start()
     {
-        startThread();
+        startThread(true,false);
     }
 
     void stop()
